@@ -1,10 +1,14 @@
 {
-    "manifest_version" : 2,
-    "permissions" : ["activeTab", "newTab" ],
-    "name": "Face Motion Live",
-    "description": "Detects your emotions during browsing session. Uses machine learning to dectect your emotions every x seconds through the use of your camera",
-    "version": "1",
-    "browser_action": {
-        "default_popup" : "popup.html"
-       }
+  "manifest_version": 2,
+  "permissions": ["activeTab", "newTab", "story"],
+  "name": "Face Motion Live",
+  "description": "Detects your emotions during browsing session. Uses machine learning to dectect your emotions every x seconds through the use of your camera",
+  "version": "1",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
 }
