@@ -1,8 +1,14 @@
 {
   "manifest_version": 2,
+<<<<<<< HEAD
   "permissions": ["activeTab", "storage", "history"],
   "name": "Face Motion Live",
   "description": "Detects your emotions during browsing session. Uses machine learning to dectect your emotions every x seconds through the use of your camera",
+=======
+  "permissions": ["activeTab", "storage", "history", "tabs"],
+  "name": "Focus",
+  "description": "Tracks time spent on entered websites",
+>>>>>>> 5c31c7258cd0434b339c7ae1cc8768b55dbf52db
   "version": "1",
   "browser_action": {
     "default_popup": "popup.html"
