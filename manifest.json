@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "contentSettings", "videoCapture"],
   "name": "Face Motion Live",
   "description": "Detects your emotions during browsing session. Uses machine learning to dectect your emotions every x seconds through the use of your camera",
   "version": "1",
