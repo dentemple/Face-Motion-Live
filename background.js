@@ -1,20 +1,11 @@
 // var background = chrome.extension.getBackgroundPage()
 // background.console.log("Test");
 
-chrome.runtime.onInstalled.addListener(function() {
-    chrome.storage.sync.set({color: '#3aa757'}, function() {
-      console.log("The color is green.");
-    });
-  });
-
-// let history = {};
- 
-chrome.history.search({ text: ""}, page => {
-    
-    function getSiteName (url) {
-        let start = url.indexOf("//");
-        let end = url.indexOf("/", start+2)+1;
-        return url.slice(start+2, end-1);
+chrome.history.search({ text: "", maxResults: 1000 }, page => {
+    function getSiteName(url) {
+      let start = url.indexOf("//")
+      let end = url.indexOf("/", start + 2) + 1
+      return url.slice(start + 2, end - 1)
     }
 
     function getUrls (urlHist) {
@@ -49,7 +40,9 @@ chrome.history.search({ text: ""}, page => {
         console.log(browserHistory);
         return browserHistory;
     }
-    
+    chrome.extension.onConnect.addListener(function(port) {
+      port.postMessage(page.slice(0, 5))
+    })
     return getUrls(page);
 });
 
