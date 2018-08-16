@@ -1,18 +1,39 @@
 <!doctype html>
 <html>
-  <head>
-        <link rel="stylesheet" type="text/css" href="./main.css">
-        <style>
-                button {
-                  height: 30px;
-                  width: 30px;
-                  outline: none;
-                }
-        </style>        
-        <title>Test</title>
-  </head>
-  <body>
-    <button id="changeColor"></button>
-    <h1>Hello World!</h1>
-  </body>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="./main.css">
+  <script src="content.js"></script>
+  <title>Test</title>
+</head>
+
+<body>
+  <main>
+    <section>
+      <h2>Worst&nbsp;Offending&nbsp;Sites</h2>
+      <ul id="site-list"></ul>
+    </section>
+    <section>
+      <form id="form-buttons">
+        <h2>Work</h2>
+        <div class="button-container">
+          <button type="submit" class="sign" id="working-minus" value="-1">-</button>
+          <span class="counter-numbers" id="working-counter">15</span>
+          <button type="submit" class="sign" id="working-plus" value="1">+</button>
+        </div>
+        <h2>Break</h2>
+        <div class="button-container">
+          <button type="submit" class="sign" id="break-minus" value="-1">-</button>
+          <span class="counter-numbers" id="break-counter">5</span>
+          <button type="submit" class="sign" id="break-plus" value="1">+</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <p id="current-time"></p>
+      <button class="sign" id="current-counter">15</button>
+    </section>
+  </main>
+</body>
+
 </html>

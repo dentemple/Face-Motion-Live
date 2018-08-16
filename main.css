@@ -1,3 +1,64 @@
-body {
-    background-color: blue;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body,
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.3em;
+  padding-top: 0;
+  text-align: center;
+}
+main {
+  display: flex;
+}
+section {
+  flex: 1;
+  margin: 0 20px;
+}
+#site-list {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.1em;
+}
+.list-item__site {
+}
+#current-time {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+#current-counter {
+  font-size: 4em;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+}
+
+.sign {
+  background-color: white;
+  font-weight: bold;
+  border-radius: 50%;
+}
+.sign:focus {
+  outline: 0;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.counter-numbers {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0 6px 5px;
+  cursor: pointer;
 }
