@@ -33,7 +33,52 @@ document.addEventListener("DOMContentLoaded", function() {
     updateSelection("#break-counter", +this.value)
   })
 
+  let isCounting = false
+  const resetButton = document.querySelector("#current-counter")
+  resetButton.addEventListener("click", function() {
+    isCounting = false
+    if (masterButton.value === "work") {
+      masterButton.innerHTML = document.querySelector("#working-counter").innerHTML
+    } else {
+      masterButton.innerHTML = document.querySelector("#break-counter").innerHTML
+    }
+  })
+
+  const masterButton = document.querySelector("#current-counter")
+
+  masterButton.addEventListener("click", function() {
+    isCounting = true
+    runCounter(+masterButton.innerHTML)
+  })
+
   updateClock()
+
+  function runCounter(duration) {
+    console.log({ value: masterButton.value, duration, isCounting })
+    // var date = new Date();
+    // var seconds = date.getTime() / 1000; //1440516958
+    // var end = seconds + duration
+
+    let x = setInterval(function() {
+      if ((isCounting = false)) {
+        clearInterval(x)
+      }
+
+      if (duration < 0) {
+        if (masterButton.value === "work") {
+          masterButton.value === "break"
+          duration = masterButton.innerHTML = +document.querySelector("#break-counter").innerHTML
+        } else {
+          masterButton.value === "work"
+          duration = masterButton.innerHTML = +document.querySelector("#working-counter").innerHTML
+        }
+      } else {
+        duration -= 1
+        masterButton.innerHTML = duration
+        console.log({ duration })
+      }
+    }, 950)
+  }
 
   function updateSelection(counterId, value) {
     let element = document.querySelector(counterId)
@@ -68,6 +113,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.querySelector("#current-time").innerHTML = currentTimeString
 
-    setInterval(() => updateClock(), 750)
+    setInterval(() => updateClock(), 1000)
   }
 })
