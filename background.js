@@ -10,6 +10,12 @@ chrome.runtime.onInstalled.addListener(function() {
 // let history = {};
 
 chrome.history.search({ text: "" }, page => {
+  chrome.history.search({ text: "", maxResults: 1000 }, page => {
+    chrome.extension.onConnect.addListener(function(port) {
+      port.postMessage(page.slice(0, 5))
+    })
+  })
+
   function getSiteName(url) {
     let start = url.indexOf("//")
     let end = url.indexOf("/", start + 2) + 1
